@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мини-Pastebin{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1><a href="{{ url_for('index') }}">Мини-Pastebin</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Новый сниппет</a></li>
+                <li><a href="{{ url_for('list_all') }}">Список сниппетов</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Мини-Pastebin - Простое приложение для обмена фрагментами кода</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,238 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+
+header h1 a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    min-height: calc(100vh - 160px);
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-family: monospace;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.btn.primary {
+    background-color: #2ecc71;
+}
+
+.btn.primary:hover {
+    background-color: #27ae60;
+}
+
+/* Snippet view styles */
+.snippet-header {
+    margin-bottom: 20px;
+}
+
+.snippet-meta {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.snippet-actions {
+    margin-bottom: 20px;
+}
+
+.snippet-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    overflow: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.snippet-content pre {
+    white-space: pre-wrap;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* Snippet list styles */
+.snippets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.snippet-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.snippet-card h3 {
+    margin-bottom: 10px;
+}
+
+.snippet-card h3 a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.snippet-preview {
+    margin: 15px 0;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    overflow: hidden;
+    max-height: 150px;
+}
+
+/* Error styles */
+.error-container {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.error-message {
+    background-color: white;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    min-width: 400px;
+}
+
+.error-message h2 {
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.error-message .btn {
+    margin-top: 20px;
+}
+
+/* API Usage section */
+.api-usage {
+    margin-top: 40px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.api-usage h3 {
+    margin-bottom: 15px;
+}
+
+.api-usage pre {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: monospace;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+    }
+    
+    nav li:first-child {
+        margin-left: 0;
+    }
+    
+    .snippets-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .error-message {
+        min-width: auto;
+        width: 100%;
+    }
+} 

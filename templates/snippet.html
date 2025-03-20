@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Сниппет {{ snippet.slug }} - Мини-Pastebin{% endblock %}
+
+{% block content %}
+<section class="snippet-view">
+    <div class="snippet-header">
+        <h2>Сниппет: {{ snippet.slug }}</h2>
+        <p class="snippet-meta">Создан: {{ snippet.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+    </div>
+    
+    <div class="snippet-actions">
+        <a href="{{ url_for('index') }}" class="btn">Новый сниппет</a>
+    </div>
+    
+    <div class="snippet-content">
+        <pre><code>{{ snippet.content }}</code></pre>
+    </div>
+</section>
+{% endblock %} 

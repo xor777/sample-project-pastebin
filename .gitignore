@@ -1,0 +1,49 @@
+# Виртуальное окружение
+venv/
+env/
+.env
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Дистрибутивы и пакеты
+dist/
+build/
+*.egg-info/
+
+# Локальные тесты и файлы разработки
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Специфичные для IDE/редакторов
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+.vs/
+
+# Логи
+*.log
+
+# Временные файлы базы данных
+*.sqlite
+*.db
+
+# Специфичные для macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent 

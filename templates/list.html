@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Все сниппеты - Мини-Pastebin{% endblock %}
+
+{% block content %}
+<section class="snippets-list">
+    <h2>Все сниппеты</h2>
+    
+    {% if snippets %}
+        <div class="snippets-grid">
+            {% for snippet in snippets %}
+                <div class="snippet-card">
+                    <h3><a href="{{ url_for('view_snippet', slug=snippet.slug) }}">{{ snippet.slug }}</a></h3>
+                    <p class="snippet-meta">Создан: {{ snippet.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                    <div class="snippet-preview">
+                        <pre>{{ snippet.preview }}{% if snippet.preview|length == 100 %}...{% endif %}</pre>
+                    </div>
+                    <a href="{{ url_for('view_snippet', slug=snippet.slug) }}" class="btn">Просмотр</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-snippets">Сниппеты не найдены. <a href="{{ url_for('index') }}">Создайте один</a>!</p>
+    {% endif %}
+</section>
+{% endblock %} 

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Создать сниппет - Мини-Pastebin{% endblock %}
+
+{% block content %}
+<section class="create-form">
+    <h2>Создать новый сниппет</h2>
+    <form method="POST" action="{{ url_for('create') }}">
+        <div class="form-group">
+            <label for="content">Содержимое:</label>
+            <textarea name="content" id="content" rows="10" placeholder="Введите ваш код или текст здесь..." required></textarea>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn primary">Создать сниппет</button>
+        </div>
+    </form>
+</section>
+
+<section class="api-usage">
+    <h3>Использование API</h3>
+    <pre>
+# Создать сниппет
+curl -X POST http://{{ request.host }}/create -H "Content-Type: application/json" -d '{"content":"Привет, мир!"}'
+
+# Получить сниппет
+curl http://{{ request.host }}/p/SLUG
+    </pre>
+</section>
+{% endblock %} 
